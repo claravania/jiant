@@ -226,6 +226,25 @@ def download_fever_nli_data_and_write_config(
     )
 
 
+def download_indo_nli_data_and_write_config(task_name: str, task_data_path: str, task_config_path: str):
+    os.makedirs(task_data_path, exist_ok=True)
+    download_utils.download_and_unzip(
+        "https://github.com/rowanz/swagaf/archive/master.zip", task_data_path,
+    )
+    py_io.write_json(
+        data={
+            "task": task_name,
+            "paths": {
+                "train": os.path.join(task_data_path, "train.jsonl"),
+                "val": os.path.join(task_data_path, "val.jsonl"),
+                "test": os.path.join(task_data_path, "test.jsonl"),
+            },
+            "name": task_name,
+        },
+        path=task_config_path,
+    )
+
+
 def download_swag_data_and_write_config(task_name: str, task_data_path: str, task_config_path: str):
     os.makedirs(task_data_path, exist_ok=True)
     download_utils.download_and_unzip(
