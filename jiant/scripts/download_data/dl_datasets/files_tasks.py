@@ -33,6 +33,10 @@ def download_task_data_and_write_config(task_name: str, task_data_path: str, tas
         download_fever_nli_data_and_write_config(
             task_name=task_name, task_data_path=task_data_path, task_config_path=task_config_path
         )
+    elif task_name == "indo_nli":
+        download_indo_nli_data_and_write_config(
+            task_name=task_name, task_data_path=task_data_path, task_config_path=task_config_path
+        )
     elif task_name == "swag":
         download_swag_data_and_write_config(
             task_name=task_name, task_data_path=task_data_path, task_config_path=task_config_path
@@ -229,7 +233,7 @@ def download_fever_nli_data_and_write_config(
 def download_indo_nli_data_and_write_config(task_name: str, task_data_path: str, task_config_path: str):
     os.makedirs(task_data_path, exist_ok=True)
     download_utils.download_and_unzip(
-        "https://github.com/claravania/indo-nli/blob/main/data/data.zip", task_data_path,
+        "https://github.com/claravania/indo-nli/raw/main/data/data.zip", task_data_path,
     )
     py_io.write_json(
         data={
