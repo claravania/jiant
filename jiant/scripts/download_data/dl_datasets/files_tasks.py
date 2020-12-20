@@ -235,6 +235,12 @@ def download_indo_nli_data_and_write_config(task_name: str, task_data_path: str,
     download_utils.download_and_unzip(
         "https://github.com/claravania/indo-nli/raw/main/data/data.zip", task_data_path,
     )
+    for phase in ["train", "val", "test"]:
+        os.rename(
+            os.path.join(task_data_path, "data", f"{phase}.jsonl"),
+            os.path.join(task_data_path, f"{phase}.jsonl"),
+        )
+    shutil.rmtree(os.path.join(task_data_path, "data"))
     py_io.write_json(
         data={
             "task": task_name,

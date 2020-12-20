@@ -27,7 +27,7 @@ class Example(BaseExample):
             guid=self.guid,
             input_premise=tokenizer.tokenize(self.input_premise),
             input_hypothesis=tokenizer.tokenize(self.input_hypothesis),
-            label_id=AdversarialNliTask.LABEL_TO_ID[self.label],
+            label_id=IndoNliTask.LABEL_TO_ID[self.label],
         )
 
 
