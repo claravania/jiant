@@ -62,7 +62,8 @@ def export_model(
 def main():
     args = RunConfiguration.default_run_cli()
     export_model(
-        hf_pretrained_model_name=args.hf_pretrained_model_name, output_base_path=args.output_base_path,
+        hf_pretrained_model_name=args.hf_pretrained_model_name,
+        output_base_path=args.output_base_path,
     )
 
 
