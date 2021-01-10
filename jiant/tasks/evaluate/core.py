@@ -964,6 +964,7 @@ def get_evaluation_scheme_for_task(task) -> BaseEvaluationScheme:
             tasks.MnliTask,
             tasks.PawsXTask,
             tasks.QnliTask,
+            tasks.RaceTask,
             tasks.RteTask,
             tasks.SciTailTask,
             tasks.SentevalTenseTask,
@@ -1026,7 +1027,14 @@ def get_evaluation_scheme_for_task(task) -> BaseEvaluationScheme:
     elif isinstance(task, tasks.ReCoRDTask):
         return ReCordEvaluationScheme()
     elif isinstance(
-        task, (tasks.SquadTask, tasks.QuorefTask, tasks.NewsQATask, tasks.MrqaNaturalQuestionsTask,)
+        task,
+        (
+            tasks.SquadTask,
+            tasks.RopesTask,
+            tasks.QuorefTask,
+            tasks.NewsQATask,
+            tasks.MrqaNaturalQuestionsTask,
+        ),
     ):
         return SQuADEvaluationScheme()
     elif isinstance(task, (tasks.TyDiQATask, tasks.XquadTask)):

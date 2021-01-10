@@ -9,15 +9,22 @@ DIRECT_SUPERGLUE_TASKS_TO_DATA_URLS = {
 
 OTHER_DOWNLOAD_TASKS = {
     "abductive_nli",
+    "arct",
     "fever_nli",
     "indo_nli",
     "swag",
     "qamr",
     "qasrl",
     "newsqa",
+    "mctaco",
+    "mctest160",
+    "mctest500",
     "mrqa_natural_questions",
+    "mutual",
+    "mutual_plus",
     "piqa",
     "winogrande",
+    "ropes",
 }
 
 DIRECT_DOWNLOAD_TASKS = set(
@@ -36,4 +43,8 @@ OTHER_HF_DATASETS_TASKS = {
     "adversarial_nli_r3",
     "arc_easy",
     "arc_challenge",
+    "race",
+    "race_middle",
+    "race_high",
+    "quail",
 }
