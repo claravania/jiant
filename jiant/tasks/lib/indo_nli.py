@@ -95,8 +95,8 @@ class IndoNliTask(Task):
             examples.append(
                 Example(
                     guid="%s-%s" % (set_type, i),
-                    input_premise=line["premise"],
-                    input_hypothesis=line["hypothesis"],
+                    input_premise=line["premis"],
+                    input_hypothesis=line["hipotesis"],
                     label=line["label"],
                 )
             )

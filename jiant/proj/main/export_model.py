@@ -17,6 +17,9 @@ class RunConfiguration(zconf.RunConfig):
 
 def lookup_and_export_model(model_type: str, output_base_path: str, hf_model_name: str = None):
     model_class, tokenizer_class = get_model_and_tokenizer_classes(model_type)
+    if str(hf_model_name).startswith("indobenchmark/indobert-lite"):
+        tokenizer_class = transformers.BertTokenizer
+        model_class = transformers.AlbertForMaskedLM
     export_model(
         model_type=model_type,
         output_base_path=output_base_path,
