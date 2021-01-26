@@ -22,6 +22,7 @@ from jiant.tasks.lib.fever_nli import FeverNliTask
 from jiant.tasks.lib.glue_diagnostics import GlueDiagnosticsTask
 from jiant.tasks.lib.hellaswag import HellaSwagTask
 from jiant.tasks.lib.indo_nli import IndoNliTask
+from jiant.tasks.lib.indo_xnli import IndoXnliTask
 from jiant.tasks.lib.mctaco import MCTACOTask
 from jiant.tasks.lib.mctest import MCTestTask
 from jiant.tasks.lib.mlm_simple import MLMSimpleTask
@@ -104,6 +105,7 @@ TASK_DICT = {
     "glue_diagnostics": GlueDiagnosticsTask,
     "hellaswag": HellaSwagTask,
     "indo_nli": IndoNliTask,
+    "indo_xnli": IndoXnliTask,
     "mctaco": MCTACOTask,
     "mctest": MCTestTask,
     "mlm_simple": MLMSimpleTask,

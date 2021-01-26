@@ -149,8 +149,6 @@ def main(args: RunConfiguration):
     tokenizer = model_setup.get_tokenizer(
         model_type=args.model_type, tokenizer_path=args.model_tokenizer_path,
     )
-    # if args.model_type == "indobert-large-p2"
-    #     tokenizer_class.from_pretrained(tokenizer_path, do_lower_case=True)
     if isinstance(args.phases, str):
         phases = args.phases.split(",")
     else:

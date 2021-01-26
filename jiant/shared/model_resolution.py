@@ -45,6 +45,10 @@ class ModelArchitectures(Enum):
             return cls.MBART
         elif model_type.startswith("electra-"):
             return cls.ELECTRA
+        elif model_type.startswith("indobert-lite"):
+            return cls.ALBERT
+        elif model_type.startswith("indobert-large"):
+            return cls.BERT
         else:
             raise KeyError(model_type)
 

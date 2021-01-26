@@ -27,7 +27,7 @@ class Example(BaseExample):
             guid=self.guid,
             input_premise=tokenizer.tokenize(self.input_premise),
             input_hypothesis=tokenizer.tokenize(self.input_hypothesis),
-            label_id=IndoNliTask.LABEL_TO_ID[self.label],
+            label_id=IndoXnliTask.LABEL_TO_ID[self.label],
         )
 
 
@@ -69,14 +69,14 @@ class Batch(BatchMixin):
     tokens: list
 
 
-class IndoNliTask(Task):
+class IndoXnliTask(Task):
     Example = Example
     TokenizedExample = Example
     DataRow = DataRow
     Batch = Batch
 
     TASK_TYPE = TaskTypes.CLASSIFICATION
-    LABELS = ["c", "e", "n"]
+    LABELS = ["contradiction", "entailment", "neutral"]
     LABEL_TO_ID, ID_TO_LABEL = labels_to_bimap(LABELS)
 
     def get_train_examples(self):
@@ -92,12 +92,14 @@ class IndoNliTask(Task):
     def _create_examples(cls, lines, set_type):
         examples = []
         for (i, line) in enumerate(lines):
+            if line["gold_label"] == '-':
+                continue
             examples.append(
                 Example(
                     guid="%s-%s" % (set_type, i),
-                    input_premise=line["premise"],
-                    input_hypothesis=line["hypothesis"],
-                    label=line["label"],
+                    input_premise=line["sentence1"],
+                    input_hypothesis=line["sentence2"],
+                    label=line["gold_label"],
                 )
             )
         return examples

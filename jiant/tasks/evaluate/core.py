@@ -961,6 +961,7 @@ def get_evaluation_scheme_for_task(task) -> BaseEvaluationScheme:
             tasks.CopaTask,
             tasks.FeverNliTask,
             tasks.IndoNliTask,
+            tasks.IndoXnliTask,
             tasks.MnliTask,
             tasks.PawsXTask,
             tasks.QnliTask,
@@ -976,7 +977,7 @@ def get_evaluation_scheme_for_task(task) -> BaseEvaluationScheme:
             tasks.XnliTask,
             tasks.MCScriptTask,
             tasks.ArctTask,
-            tasks.PiqaTask,
+            tasks.PiqaTask
         ),
     ):
         return SimpleAccuracyEvaluationScheme()

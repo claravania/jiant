@@ -16,6 +16,9 @@ def get_tokenizer(model_type, tokenizer_path):
         Tokenizer for the given model type.
 
     """
+    if model_type.startswith('indobert'):
+        return transformers.BertTokenizer.from_pretrained(tokenizer_path, do_lower_case=True)
+
     model_arch = ModelArchitectures.from_model_type(model_type)
     tokenizer_class = resolve_tokenizer_class(model_type)
     if model_arch in [ModelArchitectures.BERT]:
