@@ -45,7 +45,7 @@ class TyDiQATask(squad_style_template.BaseSquadStyleTask):
         self.language = language
 
     def get_train_examples(self):
-        if self.language == "en":
+        if self.language == "en" or self.language == "id":
             return self.read_squad_examples(path=self.train_path, set_type="train")
         else:
             raise NotImplementedError("TyDiQA does not have training examples except for English")
