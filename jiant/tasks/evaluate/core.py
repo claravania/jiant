@@ -961,6 +961,7 @@ def get_evaluation_scheme_for_task(task) -> BaseEvaluationScheme:
             tasks.CopaTask,
             tasks.FeverNliTask,
             tasks.IndoNliTask,
+            tasks.IndoNliHOTask,
             tasks.IndoXnliTask,
             tasks.MnliTask,
             tasks.PawsXTask,
