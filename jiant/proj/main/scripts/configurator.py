@@ -332,6 +332,9 @@ class SimpleAPIMultiTaskConfigurator(zconf.RunConfig):
                     task_cache_config_dict[task_name]["test"] = os.path.join(
                         self.task_cache_base_path, task_name, "test",
                     )
+                    task_cache_config_dict[task_name]["test_labels"] = os.path.join(
+                        self.task_cache_base_path, task_name, "test_labels",
+                    )
         elif isinstance(self.task_cache_config_dict, str):
             assert self.task_cache_base_path is None
             task_cache_config_dict = py_io.read_json(self.task_cache_config_dict)

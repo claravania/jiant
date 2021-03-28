@@ -24,6 +24,7 @@ from jiant.tasks.lib.hellaswag import HellaSwagTask
 from jiant.tasks.lib.indo_nli import IndoNliTask
 from jiant.tasks.lib.indo_nli_ho import IndoNliHOTask
 from jiant.tasks.lib.indo_xnli import IndoXnliTask
+from jiant.tasks.lib.indo_xnli_ho import IndoXnliHOTask
 from jiant.tasks.lib.mctaco import MCTACOTask
 from jiant.tasks.lib.mctest import MCTestTask
 from jiant.tasks.lib.mlm_simple import MLMSimpleTask
@@ -108,6 +109,7 @@ TASK_DICT = {
     "indo_nli": IndoNliTask,
     "indo_nli_ho": IndoNliHOTask,
     "indo_xnli": IndoXnliTask,
+    "indo_xnli_ho": IndoXnliHOTask,
     "mctaco": MCTACOTask,
     "mctest": MCTestTask,
     "mlm_simple": MLMSimpleTask,
